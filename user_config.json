@@ -1,0 +1,17 @@
+{
+  "states_to_scrape": [
+    "madhya_pradesh"
+  ],
+  "years_to_scrape": [
+    "2025"
+  ],
+  "products_to_scrape": [
+    "E2W",
+    "L3P",
+    "L3G",
+    "L5G",
+    "L5P",
+    "ICE"
+  ],
+  "rto_filter_list": []
+}

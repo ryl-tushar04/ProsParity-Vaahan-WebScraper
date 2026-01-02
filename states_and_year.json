@@ -1,0 +1,25 @@
+{
+  "states": {
+    "uttar_pradesh": "/html/body/div[3]/div/ul/li[35]",
+    "maharashtra": "/html/body/div[3]/div/ul/li[21]",
+    "rajasthan": "/html/body/div[3]/div/ul/li[30]",
+    "Chhattisgarh": "/html/body/div[3]/div/ul/li[7]",
+    "jharkhand": "/html/body/div[3]/div/ul/li[15]",
+    "madhya_pradesh": "/html/body/div[3]/div/ul/li[24]",
+    "bihar": "/html/body/div[3]/div/ul/li[6]",
+    "punjab": "/html/body/div[3]/div/ul/li[28]",
+    "uttarakhand": "/html/body/div[3]/div/ul/li[34]",
+    "arunachal_pradesh": "/html/body/div[3]/div/ul/li[4]",
+    "himachal_pradesh": "/html/body/div[3]/div/ul/li[13]",
+    "jammu_kashmir": "/html/body/div[3]/div/ul/li[16]",
+    "assam": "/html/body/div[3]/div/ul/li[5]",
+    "manipur": "/html/body/div[3]/div/ul/li[23]",
+    "delhi": "/html/body/div[3]/div/ul/li[10]"
+  },
+  "years": {
+    "2025": "//*[@id='selectedYear_1']",
+    "2024": "//*[@id='selectedYear_2']",
+    "2023": "//*[@id='selectedYear_3']",
+    "2022": "//*[@id='selectedYear_4']"
+  }
+}
