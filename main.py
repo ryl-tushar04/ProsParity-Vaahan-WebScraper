@@ -144,10 +144,17 @@ class VahanScraper:
     def setup_driver(self, headless=True):
         """Setup Chrome driver with options"""
         chrome_options = Options()
+        
+        # --- NEW: Point to the installed Chromium binary ---
+        chrome_options.binary_location = "/usr/bin/chromium" 
+        # ---------------------------------------------------
+
         if headless:
             chrome_options.add_argument("--headless=new")
+        
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--window-size=1920,1080")
         
         # Set download directory
@@ -159,7 +166,10 @@ class VahanScraper:
         }
         chrome_options.add_experimental_option("prefs", prefs)
         
-        self.driver = webdriver.Chrome(options=chrome_options)
+        # Initialize WebDriver using the installed chromium-driver
+        service = Service("/usr/bin/chromedriver")
+        self.driver = webdriver.Chrome(service=service, options=chrome_options)
+        
         self.wait = WebDriverWait(self.driver, 20)
         
     def navigate_to_site(self):
