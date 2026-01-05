@@ -119,7 +119,7 @@ def process_excel_file(filepath, rto, variant, year, state_name):
         oem_col = df.iloc[4:, 1].reset_index(drop=True)
         available_cols = df.shape[1]
 
-        max_month_cols = min(11 if year == "2025" else 12, available_cols - 2)
+        max_month_cols =min(12, available_cols - 2)
         month_data = df.iloc[4:, 2:2 + max_month_cols].reset_index(drop=True)
 
         out_df = pd.DataFrame()
@@ -131,7 +131,6 @@ def process_excel_file(filepath, rto, variant, year, state_name):
         out_df['OEM'] = oem_col
 
         month_dates = get_month_dates_for_year(year)
-        if year == "2025": month_dates = month_dates[:11]
 
         for i, mdate in enumerate(month_dates):
             if i < month_data.shape[1]:
