@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service                           #  no use
+from selenium.webdriver.chrome.service import Service                           
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import time    
@@ -145,13 +145,13 @@ class VahanScraper:
         """Setup Chrome driver with options"""
         chrome_options = Options()
         
-        # --- NEW: Point to the installed Chromium binary ---
-        chrome_options.binary_location = "/usr/bin/chromium" 
-        # ---------------------------------------------------
+        # 1. FORCE CHROMIUM BINARY LOCATION (Crucial for Cloud)
+        chrome_options.binary_location = "/usr/bin/chromium"
 
         if headless:
             chrome_options.add_argument("--headless=new")
         
+        # 2. REQUIRED ARGUMENTS FOR CONTAINER ENVIRONMENTS
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
@@ -166,10 +166,11 @@ class VahanScraper:
         }
         chrome_options.add_experimental_option("prefs", prefs)
         
-        # Initialize WebDriver using the installed chromium-driver
+        # 3. FORCE THE INSTALLED DRIVER (Fixes the '127' error)
+        # This tells Selenium: "Don't download anything, use the one I installed"
         service = Service("/usr/bin/chromedriver")
-        self.driver = webdriver.Chrome(service=service, options=chrome_options)
         
+        self.driver = webdriver.Chrome(service=service, options=chrome_options)
         self.wait = WebDriverWait(self.driver, 20)
         
     def navigate_to_site(self):
