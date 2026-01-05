@@ -16,10 +16,11 @@
     "manipur": "/html/body/div[3]/div/ul/li[23]",
     "delhi": "/html/body/div[3]/div/ul/li[10]"
   },
-  "years": {
-    "2025": "//*[@id='selectedYear_1']",
-    "2024": "//*[@id='selectedYear_2']",
-    "2023": "//*[@id='selectedYear_3']",
-    "2022": "//*[@id='selectedYear_4']"
+"years": {
+    "2026": "//*[@id='selectedYear_1']",
+    "2025": "//*[@id='selectedYear_2']",
+    "2024": "//*[@id='selectedYear_3']",
+    "2023": "//*[@id='selectedYear_4']",
+    "2022": "//*[@id='selectedYear_5']"
   }
 }
