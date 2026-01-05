@@ -69,6 +69,13 @@ def main():
 
     # --- UI SECTION ---
     with st.sidebar:
+        st.sidebar.header("🔍 Debugging")
+        if st.sidebar.button("Show Live Progress JSON"):
+            try:
+                with open("progress.json", "r") as f:
+                    st.sidebar.json(json.load(f))
+            except FileNotFoundError:
+                st.sidebar.warning("progress.json not found yet (Scraper hasn't started writing).")
         st.header("⚙️ Configuration")
         selected_states = st.multiselect("Select States", available_states,
                                          default=[s for s in def_states if s in available_states])
