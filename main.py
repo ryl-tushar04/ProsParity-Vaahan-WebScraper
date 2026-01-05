@@ -56,7 +56,7 @@ RTO_TO_SCRAPE = user_config_data.get("rto_filter_list", [])
 # Other configurations
 Y_AXIS = "//*[@id='yaxisVar_4']"
 X_AXIS = "//*[@id='xaxisVar_7']"
-HEADLESS_MODE = False         
+HEADLESS_MODE = True         
 DOWNLOAD_CSV = True
 
 class ProgressTracker:
